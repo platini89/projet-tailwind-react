@@ -1,3 +1,69 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@layer components{
+  .btn-primary{
+    @apply bg-primary text-white  hover:bg-button/80 duration-300 rounded-lg py-2 px-4;
+  }
+
+  .pricing-card{
+    height: 450px;
+  }
+  .pricing-card-main{
+    height: 500px;
+  }
+  .btn{
+    @apply font-bold uppercase px-10 py-4 rounded inline-flex border border-pink-700
+  }
+
+  .btn2{
+    @apply font-bold uppercase px-10 py-4 rounded inline-flex border border-blue-900
+  }
+}
+#menu-toggler{
+  z-index: 999;
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  opacity: 0;
+}
+#menu-bars{
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+}
+ #menu-toggler:checked ~ .menu{
+  display: flex;
+  width: 100vw;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
+  padding: 2rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  @apply bg-gradient-to-r from-blue-900 to-blue-500
+ }
+ #menu-toggler:checked {
+  position: fixed;
+ }
+ #menu-toggler:checked ~ #menu-bars > .close{
+  display: flex;
+  z-index: 100;
+  position: fixed;
+  top: 2rem;
+  right: 2rem;
+ }
+ #menu-toggler:checked ~ #menu-bars > .barss{
+  display: none;
+ 
+ }
+
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
